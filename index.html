@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rob – Calisthenics Coach. Lerne echte Körperbeherrschung mit individuellen Trainingsplänen." />
+  <title>Rob | Calisthenics Coach</title>
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="nav-wrapper" id="navbar">
+    <nav class="nav container">
+
+      <!-- Logo -->
+      <a href="#home" class="nav__logo" aria-label="Rob Calisthenics Coach – Startseite">
+        <img src="assets/images/rob_logo.png" alt="Cali Coach Rob Logo" class="nav__logo-img" />
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav__links" role="list">
+        <li><a href="#about"    class="nav__link">Über mich</a></li>
+        <li><a href="#training" class="nav__link">Training</a></li>
+        <li><a href="#contact"  class="nav__link">Kontakt</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="" onclick="openCalendly();return false;" class="btn btn--primary nav__cta">Termin buchen</a>
+
+      <!-- Mobile Hamburger -->
+      <button class="nav__burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+  </header>
+
+  <!-- Mobile Menu Drawer — außerhalb des Headers damit backdrop-filter
+       keinen neuen Containing Block für position:fixed erzeugt -->
+  <div class="nav__mobile" id="mobileMenu" role="dialog" aria-label="Navigation">
+    <ul class="nav__mobile-links" role="list">
+      <li><a href="#about"    class="nav__link">Über mich</a></li>
+      <li><a href="#training" class="nav__link">Training</a></li>
+      <li><a href="#contact"  class="nav__link">Kontakt</a></li>
+    </ul>
+    <a href="" onclick="openCalendly();return false;" class="btn btn--primary">Termin buchen</a>
+  </div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <img
+          src="assets/images/rob_header.jpg"
+          alt=""
+          class="hero__bg-img"
+          fetchpriority="high"
+        />
+        <div class="hero__bg-overlay"></div>
+      </div>
+
+      <div class="hero__content container">
+        <div class="hero__block">
+
+          <h1 class="hero__headline">Cali Coach Rob</h1>
+
+          <!-- Ticker — wird durch hero__block auf H1-Breite begrenzt -->
+          <div class="hero__ticker" aria-label="Schwerpunkte">
+            <div class="hero__ticker-track" id="tickerTrack" aria-hidden="true">
+              <span class="hero__ticker-item">Calisthenics</span>
+              <span class="hero__ticker-sep">✦</span>
+              <span class="hero__ticker-item">Movement</span>
+              <span class="hero__ticker-sep">✦</span>
+              <span class="hero__ticker-item">Mobility</span>
+              <span class="hero__ticker-sep">✦</span>
+              <span class="hero__ticker-item">Frankfurt</span>
+              <span class="hero__ticker-sep">✦</span>
+            </div>
+          </div>
+
+          <a href="" onclick="openCalendly();return false;" class="btn btn--primary btn--lg hero__cta">Termin buchen</a>
+
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#about" class="hero__scroll" aria-label="Nach unten scrollen">
+        <span class="hero__scroll-line"></span>
+        <span class="hero__scroll-dot"></span>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT / WHY SECTION ===================== -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <!-- ── Problem ── -->
+        <div class="about__problem">
+          <div class="about__problem-left">
+            <p class="about__eyebrow">Das Problem</p>
+            <h2 class="about__headline">
+              Training ohne<br /><em>Ergebnis?</em>
+            </h2>
+          </div>
+          <div class="about__problem-right">
+            <p class="about__lead">
+              Viele trainieren hart – aber nicht sinnvoll. Schmerzen, fehlende Beweglichkeit und stagnierende Fortschritte sind die Folge.
+            </p>
+          </div>
+        </div>
+
+        <!-- ── Solution: Cinematic Strip ── -->
+        <div class="about__solution about__solution--cinematic">
+          <div class="about__solution-cinema-wrap">
+            <img src="assets/images/detailshoot_2.jpg" alt="Robert beim Calisthenics Training in der U-Bahn" class="about__solution-img" />
+            <div class="about__solution-cinema-text" aria-hidden="true">
+              <h2 class="about__solution-headline">
+                Dein Körper braucht<br />mehr als nur<br /><em>Gewichte</em>
+              </h2>
+            </div>
+          </div>
+          <p class="about__solution-text">
+            Mein Coaching kombiniert Calisthenics, Mobility und funktionelles Training – damit du dich nicht nur stärker fühlst, sondern besser bewegst.
+          </p>
+        </div>
+
+        <!-- ── USPs ── -->
+        <div class="about__usps">
+          <p class="about__eyebrow">Warum Cali Coach Rob?</p>
+          <div class="usps-grid">
+
+            <article class="usp-card">
+              <span class="usp-card__num">01</span>
+              <h3 class="usp-card__title">Individuelles Coaching</h3>
+              <p class="usp-card__text">Kein Standardplan – alles angepasst an dich und deine Ziele.</p>
+            </article>
+
+            <article class="usp-card">
+              <span class="usp-card__num">02</span>
+              <h3 class="usp-card__title">Calisthenics Fokus</h3>
+              <p class="usp-card__text">Lerne echte Körperkontrolle und Skills wie den Handstand oder Muscle Up.</p>
+            </article>
+
+            <article class="usp-card">
+              <span class="usp-card__num">03</span>
+              <h3 class="usp-card__title">Mobility integriert</h3>
+              <p class="usp-card__text">Beweglichkeit ist Teil des Trainings – fühl dich wieder geschmeidig.</p>
+            </article>
+
+            <article class="usp-card">
+              <span class="usp-card__num">04</span>
+              <h3 class="usp-card__title">Nachhaltige Ergebnisse</h3>
+              <p class="usp-card__text">Echte Veränderung statt kurzfristiger Effekte.</p>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ===================== TRAINING / PAKETE ===================== -->
+    <section id="training" class="packages">
+      <div class="container">
+
+        <div class="packages__header">
+          <p class="packages__eyebrow">Meine Pakete</p>
+          <h2 class="packages__headline">Finde das Coaching,<br /><em>das zu dir passt</em></h2>
+        </div>
+
+        <div class="packages__grid">
+
+          <!-- Online Training -->
+          <article class="pkg-card">
+            <div class="pkg-card__head">
+              <p class="pkg-card__label">Online Training</p>
+              <h3 class="pkg-card__title">Online Training<br />Paket</h3>
+              <p class="pkg-card__tagline">Maximale Flexibilität – egal wo du bist</p>
+            </div>
+
+            <p class="pkg-card__desc">
+              Im Online Coaching unterstütze ich dich kontinuierlich auf deinem Weg. Durch regelmäßige Check-ins analysieren wir deinen Fortschritt und passen deinen Trainingsplan gezielt an. Du bekommst einen individuell erstellten Plan sowie Zugriff auf meine App, damit du strukturiert und effektiv trainieren kannst.
+            </p>
+
+            <ul class="pkg-card__features" aria-label="Leistungen">
+              <li class="pkg-card__feature">
+                <span class="pkg-card__check" aria-hidden="true"></span>
+                Regelmäßige Analyse &amp; Betreuung (wöchentliche Calls)
+              </li>
+              <li class="pkg-card__feature">
+                <span class="pkg-card__check" aria-hidden="true"></span>
+                Individueller Trainingsplan
+              </li>
+              <li class="pkg-card__feature">
+                <span class="pkg-card__check" aria-hidden="true"></span>
+                Zugang zur Fitness-App (Trainingsplan &amp; Fortschritts-Tracking)
+              </li>
+            </ul>
+
+            <a href="" onclick="openCalendly();return false;" class="btn btn--ghost pkg-card__cta">Jetzt anfragen</a>
+          </article>
+
+          <!-- Personal Training -->
+          <article class="pkg-card pkg-card--featured">
+            <div class="pkg-card__head">
+              <p class="pkg-card__label">Personal Training</p>
+              <h3 class="pkg-card__title">Personal Training<br />Paket</h3>
+              <p class="pkg-card__tagline">Individuell, flexibel und genau auf dich abgestimmt</p>
+            </div>
+
+            <p class="pkg-card__desc">
+              Mit meinem Personal Training erhältst du einen maßgeschneiderten Trainingsplan, der deine Ziele, dein Level und deinen Alltag berücksichtigt. Über meine Fitness-App hast du jederzeit Zugriff auf deinen Plan und kannst deinen Fortschritt einfach tracken. Ergänzend dazu begleite ich dich persönlich in 45- oder 60-minütigen Sessions – so oft pro Monat, wie du es brauchst.
+            </p>
+
+            <ul class="pkg-card__features" aria-label="Leistungen">
+              <li class="pkg-card__feature">
+                <span class="pkg-card__check" aria-hidden="true"></span>
+                Individueller Trainingsplan
+              </li>
+              <li class="pkg-card__feature">
+                <span class="pkg-card__check" aria-hidden="true"></span>
+                Zugang zur Fitness-App (Trainingsplan &amp; Fortschritts-Tracking)
+              </li>
+              <li class="pkg-card__feature">
+                <span class="pkg-card__check" aria-hidden="true"></span>
+                Personal Training Sessions (45 oder 60 Minuten)
+              </li>
+            </ul>
+
+            <a href="" onclick="openCalendly();return false;" class="btn btn--primary pkg-card__cta">Jetzt anfragen</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- ===================== KONTAKT ===================== -->
+    <section id="contact" class="contact">
+      <div class="container contact__inner">
+
+        <!-- Left: Text -->
+        <div class="contact__text">
+          <p class="contact__eyebrow">Kontakt</p>
+          <h2 class="contact__headline">Starte<br /><em>jetzt</em></h2>
+          <p class="contact__desc">
+            Schreib mir unverbindlich über das Formular auf der rechten Seite. Ich kontaktiere dich so schnell wie möglich für ein Erstgespräch.
+          </p>
+        </div>
+
+        <!-- Right: CTA -->
+        <div class="contact__cta-block">
+          <a href="" onclick="openCalendly();return false;" class="btn btn--primary btn--lg">
+            Termin buchen
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== ÜBER MICH ===================== -->
+    <section id="ueber-mich" class="bio">
+      <div class="container">
+
+        <div class="bio__top">
+          <p class="bio__eyebrow">Über mich</p>
+          <h2 class="bio__headline">Hey, ich bin<br /><em>Robert</em></h2>
+        </div>
+
+        <div class="bio__body">
+
+          <!-- Photo column -->
+          <div class="bio__photo-wrap">
+                 <img src="assets/images/rob_portrait.jpg" alt="Robert – Cali Coach Rob" class="bio__photo" />
+            <!-- <div class="bio__photo-placeholder" aria-hidden="true"></div> -->
+          </div>
+
+          <!-- Text column -->
+          <div class="bio__text">
+            <p class="bio__para">
+              Für mich ist Bewegung (<em class="bio__em">„Movement"</em>) das A und O, wenn es um einen starken, gesunden Körper geht.
+            </p>
+            <p class="bio__para">
+              Mit 26 habe ich Calisthenics für mich entdeckt – und war direkt hooked. Heute bin ich zertifizierter Coach der <strong>World Streetlifting and Calisthenics Federation (WSWCF)</strong> – einer der anerkanntesten Lizenzen im Calisthenics-Bereich.
+            </p>
+            <p class="bio__para">
+              Was als Herausforderung angefangen hat, wurde schnell zu meiner großen Leidenschaft. Durch intensives eigenes Training und vor allem durch die Arbeit mit vielen unterschiedlichen Menschen habe ich ein starkes Gespür für effektives und individuelles Training entwickelt. Dabei stehen für mich saubere Technik, funktionelle Bewegung und ein Ansatz im Fokus, der wirklich zu dir passt – egal auf welchem Level du gerade bist.
+            </p>
+            <p class="bio__para">
+              Heute helfe ich Menschen dabei, stärker zu werden, sich besser zu bewegen und ein besseres Körpergefühl zu entwickeln. Egal ob mehr Kraft, bessere Mobility oder einfach ein athletischer Look – wir gehen das gemeinsam strukturiert und realistisch an.
+            </p>
+
+            <!-- Certification badge -->
+            <div class="bio__cert">
+              <div class="bio__cert-icon" aria-hidden="true">✦</div>
+              <div>
+                <p class="bio__cert-title">Zertifizierter Coach</p>
+                <p class="bio__cert-body">World Streetlifting and Calisthenics Federation (WSWCF)</p>
+              </div>
+            </div>
+
+            <p class="bio__closing">
+              Ich begleite dich auf deinem Weg – persönlich, klar und ohne unnötigen Schnickschnack.
+            </p>
+
+            <a href="" onclick="openCalendly();return false;" class="btn btn--primary btn--lg bio__cta">
+              Termin buchen
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; 2026 Rob Calisthenics Coach. Alle Rechte vorbehalten.</p>
+      <nav class="footer__legal" aria-label="Rechtliche Links">
+        <a href="impressum.html" class="footer__legal-link">Impressum</a>
+        <a href="datenschutz.html" class="footer__legal-link">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
